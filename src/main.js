@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import './common/rem'
 import Fastclick from 'fastclick'
+import store from './store/state'
 
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function () {
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

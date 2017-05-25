@@ -9,137 +9,17 @@
       <div class="hot-city">
         <p>热门城市</p>
         <div class="hot-city-box">
-          <span v-for="item in gethot" v-text="item.n"></span>
+          <span v-for="item in gethot" v-text="item.n" @click="jumphome(item.id, item.n)"></span>
         </div>
       </div>
     </div>
     <div class='area-all'>
-        <div class="area-all-item">
-          <h2>
-            A
+        <div class="area-all-item" v-for="(item, key) in newcity">
+          <h2 v-text="key">
+            
           </h2>
           <div class="area-all-box">
-            <span>啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-          </div>
-        </div>
-        <div class="area-all-item">
-          <h2>
-            A
-          </h2>
-          <div class="area-all-box">
-            <span v-for="item in gethot" v-text="item.n"></span>
-          </div>
-        </div>
-        <div class="area-all-item">
-          <h2>
-            A
-          </h2>
-          <div class="area-all-box">
-            <span>啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-          </div>
-        </div>
-        <div class="area-all-item">
-          <h2>
-            A
-          </h2>
-          <div class="area-all-box">
-            <span>啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-          </div>
-        </div>
-        <div class="area-all-item">
-          <h2>
-            A
-          </h2>
-          <div class="area-all-box">
-            <span>啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
-            <span>啊啊啊啊</span>
+            <span v-for="item1 in item" v-text="item1.n" @click="jumphome(item1.id, item1.n)"></span>
           </div>
         </div>
     </div>
@@ -147,12 +27,14 @@
 </template>
 <script>
 import api from '../../store/api'
+import {mapActions} from 'vuex'
 export default {
   data () {
     return {
       location: '定位中...',
       city: [],
-      zimu: []
+      zimu: [],
+      newcity: null
     }
   },
   created () {
@@ -168,6 +50,9 @@ export default {
       })
   },
   methods: {
+    ...mapActions([
+      'setlocation'
+    ]),
     getlocation () {
       api.getlocation()
         .then(res => {
@@ -180,15 +65,30 @@ export default {
         .then(res => {
           console.log(res)
           this.city = res.data.p
-          // res.data.p.
           let zimu = []
           for (let i = 0, len = res.data.p.length; i < len; i++) {
             if (zimu.indexOf(res.data.p[i].pinyinFull.slice(0, 1).toUpperCase()) === -1) {
               zimu.push(res.data.p[i].pinyinFull.slice(0, 1))
             }
           }
-          this.zimu = zimu.sort()
+          // this.zimu = zimu.sort()
+          let newcity = {}
+          for (let i = 0, len = zimu.length; i < len; i++) {
+            let newarr = res.data.p.filter(function (value, index) {
+              return value.pinyinFull.slice(0, 1).toUpperCase() === zimu[i]
+            })
+            newcity[zimu[i]] = newarr
+          }
+          this.newcity = newcity
         })
+    },
+    jumphome (id, text) {
+      let params = {
+        id: id,
+        text: text
+      }
+      this.setlocation(params)
+      this.$router.push({path: '/home'})
     }
   },
   filters: {

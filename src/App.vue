@@ -1,5 +1,5 @@
 <template>
-    <transition name="router-in">
+    <transition name="router-in" mode="out-in">
       <router-view></router-view>
     </transition>
 </template>

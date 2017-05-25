@@ -1,0 +1,51 @@
+@import '../../common/common';
+.home-nav{
+  height:rem(80);
+  background-color:#0f3a4b;
+  color:#f8f8f8;
+  font-size:rem(40);
+  font-weight: 400;
+  position:relative;
+  h3{
+    @include lheight(80);
+    width:50vw;
+    margin:0 auto;
+    text-align: center;
+  }
+  .area{
+    position:absolute;
+    display: flex;
+    left:rem(20);
+    margin-top:rem(15);
+    span{
+      font-size:rem(35);
+      @include lheight(50);
+    }
+    img{
+      height:rem(50);
+    }
+  }
+}
+.home-tab{
+  height:rem(80);
+  background-color:#0f3a4b;
+  font-size:rem(35);
+  color:#f8f8f8;
+  display: flex;
+  span{
+    width:50%;
+    text-align: center;
+    @include lheight(80);
+  }
+}
+.home-switch{
+  height:rem(20);
+  background-color:#0f3a4b;
+  span{
+    height:rem(10);
+    border-radius:rem(2);
+    background-color:#f8f8f8;
+    width:10vw;
+    display: inline-block;
+  }
+}

@@ -50,10 +50,10 @@ body{
         width:25%;
         text-align: center;
         font-size:rem(30);
-        @include lheight(50);
+        @include lheight(60);
         color:#333;
         display: inline-block;
-        margin-bottom:rem(10);
+        margin-bottom:rem(20);
       }
     }
   }
@@ -75,8 +75,9 @@ body{
     flex-wrap:wrap;
     span{
       width:25%;
-      margin-top:rem(20);
-      @include lheight(60);
+      margin-top:rem(10);
+      margin-bottom:rem(10);
+      @include lheight(70);
       text-align: center;
       color:#333;
       font-size:rem(30);
