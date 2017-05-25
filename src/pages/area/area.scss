@@ -1,0 +1,86 @@
+@import '../../common/common.scss';
+body{
+  // padding-top:rem(80);
+}
+.area-wrap{
+  background-color:#f9f9f9;
+  // height:100vh;
+  padding-top:rem(80);
+  position:relative;
+}
+.area-nav{
+  height:rem(80);
+  background-color:#0f3a4b;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  h2{
+    color:#fff;
+    font-size:rem(35);
+    font-weight: normal;
+    @include lheight(80);
+    text-align: center;
+    width:70vw;
+    margin:0 auto;
+    color:#f8f8f8;
+  }
+}
+.area-head{
+  // margin-top:rem(80);
+  .getlocation{
+    padding-left:rem(30);
+    font-size:rem(30);
+    @include lheight(80);
+    color:#666;
+    box-shadow:1px 0px 0px 0.5px #ddd;
+  }
+  .hot-city{
+    p{
+      padding-left:rem(30);
+      font-size:rem(30);
+      @include lheight(80);
+      color:#666;
+    }
+    .hot-city-box{
+      width:100%;
+      display: flex;
+      flex-wrap: wrap;
+      span{
+        width:25%;
+        text-align: center;
+        font-size:rem(30);
+        @include lheight(50);
+        color:#333;
+        display: inline-block;
+        margin-bottom:rem(10);
+      }
+    }
+  }
+}
+.area-all{
+  font-size: rem(35);
+  font-weight: 400;
+  h2{
+    @include lheight(80);
+    background-color:#f2f2f2;
+    color:#666;
+    // font-size: rem(35);
+    padding-left: rem(30);
+    // font-weight: 400;
+    box-shadow: 0px -1px 5px 1px #ddd inset;
+  }
+  .area-all-box{
+    display: flex;
+    flex-wrap:wrap;
+    span{
+      width:25%;
+      margin-top:rem(20);
+      @include lheight(60);
+      text-align: center;
+      color:#333;
+      font-size:rem(30);
+      display: inline-block;
+    }
+  }
+}
