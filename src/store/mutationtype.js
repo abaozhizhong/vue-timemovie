@@ -1,1 +1,3 @@
 export const SETLOCATION = 'SETLOCATION'
+export const SETONLIST = 'SETONLIST'
+export const SETSOONLIST = 'SETSOONLIST'

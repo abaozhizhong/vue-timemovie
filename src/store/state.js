@@ -7,7 +7,9 @@ Vue.use(Vuex)
 
 const state = {
   locationid: '',
-  locationtext: '请选择'
+  locationtext: '请选择',
+  onlist: [],  // 正在热映的数组
+  soonlist: [] // 即将上映的数组
 }
 
 export default new Vuex.Store({

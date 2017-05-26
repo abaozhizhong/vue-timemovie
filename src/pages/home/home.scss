@@ -1,4 +1,10 @@
 @import '../../common/common';
+.wrap-home{
+  height:100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 .home-nav{
   height:rem(80);
   background-color:#0f3a4b;
@@ -17,8 +23,9 @@
     display: flex;
     left:rem(20);
     margin-top:rem(15);
+    padding-top:rem(5);
     span{
-      font-size:rem(35);
+      font-size:rem(25);
       @include lheight(50);
     }
     img{
@@ -39,13 +46,92 @@
   }
 }
 .home-switch{
-  height:rem(20);
+  height:rem(10);
+  height:rem(10);
+  overflow: hidden;
   background-color:#0f3a4b;
   span{
-    height:rem(10);
+    height:rem(5);
+    transition:all .3s ease;
     border-radius:rem(2);
     background-color:#f8f8f8;
+    float:left;
+    transform: translate(20vw,0);
     width:10vw;
-    display: inline-block;
+    animation: changdu .3s ease;
+    // display: inline-block;
+  }
+}
+@keyframes changdu {
+  from {width:20vw}
+  to {width:10vw}
+}
+.active{
+  span{
+    transform: translate(70vw,0);
+  }
+}
+.home-content{
+  flex:1;
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  .on-list{
+    padding-left:rem(30);
+    .on-list-item{
+      display: flex;
+      border-bottom:1px solid #ddd;
+      padding:rem(20) 0;
+        dt{
+          height:rem(200);
+          width:rem(150);
+          img{
+            height:100%;
+            width:100%;
+          }
+        }
+        dd{
+          display: flex;
+          flex-direction: column;
+          align-content: space-between;
+          padding-left:rem(30);
+          padding-top:rem(10);
+          h1,h3,p,h4{
+            margin-bottom:rem(15);
+          }
+          h1{
+            font-size:rem(30);
+            // margin-bottom:rem(10);
+            .point{
+              color:#006400;
+            }
+          }
+          h3{
+            font-size: rem(25);
+            color:#fb7e00;
+          }
+          h4{
+            font-size: rem(25);
+            .people{
+              color:#fb7e00;
+              font-weight: 400;
+            }
+          }
+          p{
+            color:#999;
+            font-size: rem(20);
+          }
+          .movie-types{
+            display: flex;
+            span{
+              font-size: rem(20);
+              border:1px solid #ddd;
+              color:#999;
+              border-radius:rem(5);
+              padding:rem(5);
+              margin-right:rem(10);
+            }
+          }
+        }
+    }
   }
 }

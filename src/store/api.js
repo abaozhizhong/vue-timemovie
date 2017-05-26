@@ -54,5 +54,11 @@ export default {
   },
   getallcity () {
     return fetch('/api/Showtime/HotCitiesByCinema.api')
+  },
+  getonlist (id) {
+    return fetch('/api/Showtime/LocationMovies.api?locationId=' + id)
+  },
+  getsoonlist (id) {
+    return fetch('/api/Movie/MovieComingNew.api?locationId=' + id)
   }
 }
