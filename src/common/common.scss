@@ -5,4 +5,12 @@
   height: rem($px);
   line-height: rem($px);
 }
-// @mixin border-bottom ()
+@mixin same ($px) {
+  height: rem($px);
+  width: rem($px);
+}
+@mixin ellipsis (){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

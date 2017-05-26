@@ -4,6 +4,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color:#f9f9f9;
 }
 .home-nav{
   height:rem(80);
@@ -13,10 +14,13 @@
   font-weight: 400;
   position:relative;
   h3{
-    @include lheight(80);
+    @include lheight(40);
     width:50vw;
     margin:0 auto;
+    margin-top:rem(20);
     text-align: center;
+    background: url('../../assets/logo_mtime.png') no-repeat center center;
+    background-size:contain;
   }
   .area{
     position:absolute;
@@ -95,6 +99,8 @@
           align-content: space-between;
           padding-left:rem(30);
           padding-top:rem(10);
+          position:relative;
+          flex:1;
           h1,h3,p,h4{
             margin-bottom:rem(15);
           }
@@ -131,7 +137,153 @@
               margin-right:rem(10);
             }
           }
+          .buy{
+            position:absolute;
+            bottom:0;
+            right:rem(20);
+            color:#fb7e00;
+            border:1px solid #fb7e00;
+            border-radius:rem(5);
+            font-size:rem(35);
+            padding:rem(12);
+          }
         }
+    }
+  }
+}
+.attention-nav{
+  display: flex;
+  width:95vw;
+  margin:rem(20) auto;
+  // justify-content: space-around;
+  flex-wrap:nowrap;
+  overflow: hidden;
+  overflow-x: auto;
+  box-sizing: content-box;
+  padding:rem(10) 0;
+  span{
+    @include lheight(50);
+    font-size:rem(25);
+    flex-shrink: 0;
+    display: inline-block;
+    width:rem(150);
+    background-color:#f2f2f2;
+    margin-right:rem(15);
+    border-radius:rem(10);
+    text-align: center;
+    color:#999;
+  }
+  span.active{
+    color:#fff;
+    background-color: #fb7e00;
+  }
+}
+.attention-content{
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  .attention-content-item{
+    width:rem(200);
+    padding:2.5vw;
+    flex-shrink: 0;
+    header{
+      font-size:rem(25);
+      color:#999;
+      margin-bottom:rem(10);
+    }
+    .img-box{
+      width:rem(200);
+      height:rem(300);
+      margin-bottom:rem(10);
+      img{
+        height:100%;
+        width:100%;
+      }
+    }
+    p{
+      font-size: rem(30);
+      margin-bottom:rem(10);
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .whowantsee{
+      display: flex;
+      justify-content: space-between;
+      span{
+        color:#999;
+        font-size:rem(25);
+        @include lheight(30);
+      }
+      img{
+        @include same(30);
+      }
+    }
+  }
+}
+.title{
+  background-color:#f2f2f2;
+  font-size:rem(30);
+  @include lheight(50);
+  padding-left:2.5vw;
+  color:#999;
+}
+.moviecomings-content{
+  .moviecomings-item{
+    margin-left:2.5vw;
+    padding:rem(20) 0;
+    border-bottom:1px solid #ddd;
+    display: flex;
+    dt{
+      height:rem(200);
+      width:rem(160);
+      flex-shrink:0;
+      img{
+        height:100%;
+        width:100%;
+      }
+    }
+    dd{
+      flex:1;
+      display: flex;
+      flex-wrap:wrap;
+      position:relative;
+      @include ellipsis;
+      p{
+        font-size:rem(30);
+        width:80%;
+        @include ellipsis;
+      }
+      .buy{
+        position:absolute;
+        bottom:0;
+        right:rem(20);
+        color:#5ed125;
+        border:1px solid #5ed125;
+        border-radius:rem(5);
+        font-size:rem(35);
+        padding:rem(12);
+      }
+      // flex-direction:column;
+      padding-left:rem(15);
+      align-content: space-around;
+      .date{
+        font-size:rem(40);
+        span{
+          color:#999;
+          font-size:rem(30);
+        }
+      }
+      .type{
+        // font-size:rem(30);
+        color:#fb7e00;
+        span{
+          color:#999;
+        }
+      }
+      .actor{
+        color:#999;
+      }
     }
   }
 }
