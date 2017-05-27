@@ -8,5 +8,11 @@ export default {
   },
   setsoonlist ({commit}, playload) {
     commit(types.SETSOONLIST, playload)
+  },
+  setattention ({commit}, playload) {
+    commit(types.SETATTENTION, playload)
+  },
+  setdetail ({commit}, playload) {
+    commit(types.SETDETAIL, playload)
   }
 }

@@ -60,5 +60,8 @@ export default {
   },
   getsoonlist (id) {
     return fetch('/api/Movie/MovieComingNew.api?locationId=' + id)
+  },
+  getdetail (locationid, moviesid) {
+    return fetch('/api/movie/detail.api?locationId=' + locationid + '&movieId=' + moviesid)
   }
 }

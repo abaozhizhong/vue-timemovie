@@ -104,6 +104,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import './area.scss'
+@import './area.scss';
 </style>
 

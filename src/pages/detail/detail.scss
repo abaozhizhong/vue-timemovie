@@ -1,0 +1,193 @@
+@import '../../common/common';
+body{
+  height:100vh;
+}
+.wrap-detail{
+  // padding-top:rem(80);
+  background-color:#ddd;
+  nav{
+    display: flex;
+    align-items: center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    @include lheight(80);
+    background: rgba(0, 0, 0, 0);
+    color:transparent;
+    font-size:rem(40);
+    z-index: 1;
+    // animation:color 1s ease;
+    transition:all .3s ease-in;
+    img{
+      margin-left:rem(20);
+      @include same(40);
+      flex-shrink: 0;
+    }
+    span{
+      flex:1;
+      text-align: center;
+      padding-right:rem(40);
+    }
+  }
+  // @keyframes color {
+  //   20% {opacity:0.2}
+  //   50% {opacity:0.5}
+  //   70% {opacity:0.7}
+  //   100% {opacity:1}
+  // }
+  .pulldown{
+    color:#fff;
+    background-color: #0f3a4b;
+  }
+  .img-box{
+    position:relative;
+    height:rem(250);
+    overflow: hidden;
+    div{
+        font-size:rem(30);
+        color:#fff;
+        position:absolute;
+        bottom:rem(10);
+        left:rem(280);
+        p{
+          margin-bottom:rem(10);
+        }
+    }
+    img{
+      width:100%;
+      height:600%;
+      // filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+      
+      -webkit-filter: blur(10px); /* Chrome, Opera */
+        -moz-filter: blur(10px);
+          -ms-filter: blur(10px);    
+              filter: blur(10px);
+      
+      filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
+    }
+  }
+  .detail-head{
+    height:rem(250);
+    position:relative;
+    opacity: 1;
+    padding-top:rem(10);
+    background-color: #fff;
+    // box-shadow: 0 1px 1px 1px #ddd;
+    .detail-head-img{
+      position:relative;
+      padding:rem(5);
+      background-color:#fff;
+      position:absolute;
+      top:rem(-100);
+      left:2.5vw;
+      height:rem(330);
+      width:rem(220);
+      img{
+        height:100%;
+        width:100%;
+      }
+    }
+    .detail-head-info{
+      font-size:rem(30);
+      padding-left:rem(280);
+      dd{
+        margin-bottom:rem(13);
+      }
+      .cimera{
+        // font-size:rem();
+        span{
+          border:1px solid #ddd;
+          padding:rem(5) rem(5);
+          border-radius:rem(5);
+          font-size:rem(20);
+          color:#999;
+        }
+      }
+      .color{
+        color:#fb7e00;
+      }
+    }
+  }
+  .detail-content{
+    margin-top:rem(20);
+    background-color:#fff;
+    height:auto;
+    font-size:rem(30);
+    padding:rem(30) rem(30) rem(0) rem(30);
+    letter-spacing: 2px;
+    img{
+      @include same(40);
+      margin:0 auto;
+      margin-top:rem(10);
+      display: block;
+    }
+    p{
+      line-height: rem(40);
+      height:auto;
+      // transition:all .3s ease;
+    }
+    .ellipsis{
+      height:rem(80);
+      overflow: hidden;
+    }
+  }
+  .detail-actor{
+      background-color: #fff;
+      margin-top:rem(20);
+      font-size:rem(30);
+      padding:rem(15);
+      display: flex;
+      overflow: hidden;
+      overflow-x: auto;
+      dl{
+        width:rem(200);
+        flex-shrink: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .director{
+        padding:rem(20);
+        dd{
+          font-size:rem(20);
+          margin-top:rem(20);
+        }
+        dt{
+            margin-bottom:rem(10);
+          }
+        .director-img{
+          height:rem(200);
+          width:rem(200);
+          img{
+            width:100%;
+            height:100%;
+          }
+        }
+      }
+      .actors{
+        padding:rem(20);
+        dd{
+          font-size:rem(20);
+          margin-top:rem(20);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        dt{
+            margin-bottom:rem(1);
+          }
+        .actor-img{
+          height:rem(200);
+          width:rem(200);
+          img{
+            width:100%;
+            height:100%;
+          }
+        }
+      }
+  }
+  .detail-audio{
+    
+  }
+}

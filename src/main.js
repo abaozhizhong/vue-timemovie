@@ -6,7 +6,7 @@ import router from './router'
 import './common/rem'
 import Fastclick from 'fastclick'
 import store from './store/state'
-
+import Animate from 'animate.css'
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function () {
         Fastclick.attach(document.body)

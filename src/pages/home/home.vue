@@ -14,10 +14,11 @@
     <div class="home-switch" :class="show? '': 'active'">
       <span></span>
     </div>
-    <div class="home-content">
-        <div v-show="show">
+    <div class="home-content" ref="content">
+      <!--<transition enter-active-class="bounceInLeft" leave-active-class="bounceOutRight" class="animated">-->
+        <div v-if="show" class="animated">
           <div class="on-list">
-            <dl class="on-list-item" v-for="item in  onlist">
+            <dl class="on-list-item" v-for="item in  onlist"  @click="$router.push({path: 'detail', query:{'moviesid': item.id}})">
               <dt>
                 <img :src="item.img" alt="">
               </dt>
@@ -40,16 +41,13 @@
             </dl>
           </div>
         </div>
-        <div v-show="!show">
+        <div v-if="!show" class="animated">
           <div class="attention-nav">
-            <span class="active">最受关注</span>
-            <span>六月大片</span>
-            <span>七月大片</span>
-            <span>八月大片</span>
-            <span>有望引入</span>
+            <span :class="attentionshow == 'attention'? 'active': ''" @click="changgelist('attention')">最受关注</span>
+            <span :class="attentionshow == item ? 'active': ''" v-for="(item, index) in month" v-text="`${monthzn[index]}月大片`" @click="changgelist(item)"></span>
           </div>
-          <div class="attention-content">
-            <div class="attention-content-item" v-for="item in soonlist.attention">
+          <div class="attention-content" ref="attention">
+            <div class="attention-content-item" v-for="item in attention" @click="$router.push({path: 'detail', query:{'moviesid': item.id}})">
               <header v-text="`${item.rMonth}月${item.rDay}日`"></header>
               <div class="img-box">
                 <img :src="item.image" alt="">
@@ -63,7 +61,7 @@
           </div>
           <p class="title">即将上映</p>
           <div class="moviecomings-content">
-            <dl class="moviecomings-item" v-for="item in soonlist.moviecomings">
+            <dl class="moviecomings-item" v-for="item in soonlist.moviecomings"  @click="$router.push({path: 'detail', query:{'moviesid': item.id}})">
               <dt>
                 <img :src="item.image" alt="">
               </dt>
@@ -76,6 +74,7 @@
             </dl>
           </div>
         </div>
+      <!--</transition>-->
     </div>
   </div>
 </template>
@@ -84,12 +83,23 @@ import {mapGetters, mapActions} from 'vuex'
 export default {
   data () {
     return {
-      show: true
+      show: true,
+      attentionshow: 'attention',
+      soonatttention: [],
+      month: [], // 月份
+      monthzn: [] // 月份中文
     }
   },
   created () {
-    this.setonlist(this.locationid)
-    this.setsoonlist(this.locationid)
+    this.setonlist(this.locationid)  // 加载正在热映数组
+    this.setsoonlist(this.locationid) // 加载即将上映数组
+    console.log(new Date().getMonth() + 5)
+    for (let i = new Date().getMonth() + 2; i < new Date().getMonth() + 4; i++) {
+      this.month.push(i)
+      let arr = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二']
+      this.monthzn.push(arr[i - 1])
+    }
+    // this.soonatttention = this.soonlist.attention
   },
   computed: {
     ...mapGetters([
@@ -97,13 +107,36 @@ export default {
       'locationtext',
       'onlist',
       'soonlist'
-    ])
+      // 'attention'
+    ]),
+    ...mapGetters({
+      attention: 'attention'
+    })
   },
   methods: {
     ...mapActions([
       'setonlist',
-      'setsoonlist'
-    ])
+      'setsoonlist',
+      'setattention'
+    ]),
+    changgelist (val) {
+      this.$refs.attention.scrollLeft = 0
+      if (val === 'attention') {
+        this.attentionshow = val
+        this.setattention(this.soonlist.attention)
+      } else {
+        this.attentionshow = val
+        let newarr = this.soonlist.moviecomings.filter(function (item, index) {
+          return item.rMonth === val
+        })
+        this.setattention(newarr)
+      }
+    }
+  },
+  watch: {
+    show () {
+      this.$refs.content.scrollTop = 0 // 切换tab的时候改变scrolltop
+    }
   }
 }
 </script>

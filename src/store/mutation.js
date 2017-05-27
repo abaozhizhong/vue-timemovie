@@ -15,6 +15,18 @@ export default {
     api.getsoonlist(playload)
       .then(res => {
         state.soonlist = res.data
+        state.attention = res.data.attention
+        // console.log(res.data.attention)
+      })
+  },
+  [types.SETATTENTION] (state, playload) {
+    state.attention = playload
+  },
+  [types.SETDETAIL] (state, playload) {
+    api.getdetail(playload.locationid, playload.moviesid)
+      .then(res => {
+        state.detail = res.data
+        console.log(res.data)
       })
   }
 }

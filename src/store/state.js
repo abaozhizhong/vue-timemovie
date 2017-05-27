@@ -6,10 +6,12 @@ import mutations from './mutation'
 Vue.use(Vuex)
 
 const state = {
-  locationid: '290',
-  locationtext: '北京',
+  locationid: '323',
+  locationtext: '厦门',
   onlist: [],  // 正在热映的数组
-  soonlist: [] // 即将上映的数组
+  soonlist: [], // 即将上映的数组
+  attention: [],
+  detail: null
 }
 
 export default new Vuex.Store({
