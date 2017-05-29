@@ -34,26 +34,38 @@
       <img :src="isellipsis? imglist[0]:imglist[1] " alt="" @click="isellipsis = !isellipsis">
     </div>
     <div class="detail-actor">
-      <dl class="director">
-        <dt>导演</dt>
-        <dd class="director-img">
-          <img :src="detail.director.directorImg" alt="">
-        </dd>
-        <dd v-text="detail.director.directorName"></dd>
-        <dd v-text="detail.director.directorNameEn"></dd>
-      </dl>
-      <dl class="actors" v-for="item in detail.actorList">
-        <dt>主演</dt>
-        <dd class="actor-img">
-          <img :src="item.actorImg" alt="">
-        </dd>
-        <dd v-text="item.actor"></dd>
-        <dd v-text="item.actorEn"></dd>
-        <dd v-text="`饰${item.roleName}`"></dd>
-      </dl>
+      <div class="detail-actor-head">
+        <span>{{detail.personCount}}位演职员</span>
+        <img src="../../assets/down.svg" alt="">
+      </div>
+      <div class="detail-actor-content">
+          <dl class="director">
+            <dt>导演</dt>
+            <dd class="director-img">
+              <img :src="detail.director.directorImg" alt="">
+            </dd>
+            <dd v-text="detail.director.directorName"></dd>
+            <dd v-text="detail.director.directorNameEn"></dd>
+          </dl>
+          <dl class="actors" v-for="(item, index) in detail.actorList">
+            <dt v-text="index === 0? '主要演员': '  '"></dt>
+            <dd class="actor-img">
+              <img :src="item.actorImg" alt="">
+            </dd>
+            <dd v-text="item.actor"></dd>
+            <dd v-text="item.actorEn"></dd>
+            <dd v-text="`饰${item.roleName}`"></dd>
+          </dl>
+      </div>
     </div>
-    <div class="detail-audio">
-
+    <div class="detail-images">
+      <header>
+        <span v-text="`${detail.imageCount}张图片`"></span>
+        <img src="../../assets/down.svg" alt="">
+      </header>
+      <div class="detail-images-content">
+        <img :src="item" alt="" v-for="item in detail.images">
+      </div>
     </div>
     <p>1</p>
     <p>1</p>

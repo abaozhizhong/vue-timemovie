@@ -58,12 +58,12 @@ body{
       width:100%;
       height:600%;
       // filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
-      
+
       -webkit-filter: blur(10px); /* Chrome, Opera */
         -moz-filter: blur(10px);
-          -ms-filter: blur(10px);    
+          -ms-filter: blur(10px);
               filter: blur(10px);
-      
+
       filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
     }
   }
@@ -113,9 +113,9 @@ body{
     margin-top:rem(20);
     background-color:#fff;
     height:auto;
-    font-size:rem(30);
+    font-size:rem(35);
     padding:rem(30) rem(30) rem(0) rem(30);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     img{
       @include same(40);
       margin:0 auto;
@@ -125,6 +125,7 @@ body{
     p{
       line-height: rem(40);
       height:auto;
+      color:#333;
       // transition:all .3s ease;
     }
     .ellipsis{
@@ -132,14 +133,35 @@ body{
       overflow: hidden;
     }
   }
+  .header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:rem(20);
+    margin-top:rem(20);
+    span{
+      font-size:rem(40);
+      color:#000;
+      font-weight:700;
+      margin-left:rem(20);
+    }
+    img{
+      float:right;
+      @include same(40);
+      margin-right:rem(20);
+      transform:rotate(-90deg);
+    }
+  }
   .detail-actor{
-      background-color: #fff;
-      margin-top:rem(20);
+    background-color: #fff;
+    margin-top:rem(20);
+    padding:rem(15);
+    overflow: hidden;
+    .detail-actor-head{
+      @extend .header
+    }
+    .detail-actor-content{
       font-size:rem(30);
-      padding:rem(15);
       display: flex;
-      overflow: hidden;
-      overflow-x: auto;
       dl{
         width:rem(200);
         flex-shrink: 0;
@@ -149,11 +171,16 @@ body{
       }
       .director{
         padding:rem(20);
+        border-right:1px solid #ddd;
+        header{
+          display:inline-block;
+        }
         dd{
           font-size:rem(20);
           margin-top:rem(20);
         }
         dt{
+        height:rem(30);
             margin-bottom:rem(10);
           }
         .director-img{
@@ -175,6 +202,7 @@ body{
           white-space: nowrap;
         }
         dt{
+          height:rem(30);
             margin-bottom:rem(1);
           }
         .actor-img{
@@ -186,8 +214,22 @@ body{
           }
         }
       }
+    }
   }
-  .detail-audio{
-    
+  .detail-images{
+    margin-top:rem(20);
+    padding:rem(15);
+    background-color: #fff;
+    header{
+      @extend .header;
+    }
+    .detail-images-content{
+      display: flex;
+      justify-content:space-around;
+      margin:rem(50) 0;
+      img{
+        @include same(160);
+      }
+    }
   }
 }

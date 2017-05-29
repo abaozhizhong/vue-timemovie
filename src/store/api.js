@@ -63,5 +63,11 @@ export default {
   },
   getdetail (locationid, moviesid) {
     return fetch('/api/movie/detail.api?locationId=' + locationid + '&movieId=' + moviesid)
+  },
+  getcommentsplus (movieid, page) {
+    return fetch('/api/Movie/HotLongComments.api?pageIndex='+page+'&movieId=' + movieid)
+  },
+  getcommentsmini (movieid, page) {
+    return fetch('/api/Showtime/HotMovieComments.api?pageIndex='+page+'&movieId=' + movieid)
   }
 }
