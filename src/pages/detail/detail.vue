@@ -67,36 +67,25 @@
         <img :src="item" alt="" v-for="item in detail.images">
       </div>
     </div>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
-    <p>1</p>
+    <div class="detail-commentsplus">
+      <header>
+        <span v-text="`精彩影评(${commentsplus.totalCount})`"></span>
+        <img src="../../assets/down.svg" alt="">
+      </header>
+      <div class="detail-commentsplus-content">
+        <p v-text="commentsplus.comments[0].title" class="commentsplus-title"></p>
+        <p v-text="commentsplus.comments[0].content" class="commentsplus-content"></p>
+      </div>
+      <dl class="commentsplus-info">
+        <dt>
+          <img :src="commentsplus.comments[0].headurl" alt="">
+        </dt>
+        <dd>
+          <p v-text="commentsplus.comments[0].nickname"></p>
+          <span>{{commentsplus.comments[0].modifyTime | getlocaltime}} 看过 - 评分 </span><span class="commentsplus-point">{{commentsplus.comments[0].rating}}</span>
+        </dd>
+      </dl>
+    </div>
   </div>
 </template>
 <script>
@@ -116,7 +105,13 @@ export default {
       locationid: that.locationid,
       moviesid: this.$route.query.moviesid
     }
+    let params1 = {
+      moviesid: this.$route.query.moviesid,
+      page: 1
+    }
     this.setdetail(params)
+    this.setbanner(params)
+    this.setcommentsplus(params1)
   },
   mounted () {
     let that = this
@@ -135,13 +130,17 @@ export default {
   },
   methods: {
     ...mapActions([
-      'setdetail'
+      'setdetail',
+      'setcommentsplus',
+      'setbanner'
     ])
   },
   computed: {
     ...mapGetters([
       'detail',
-      'locationid'
+      'locationid',
+      'commentsplus',
+      'banner'
     ])
   }
 }

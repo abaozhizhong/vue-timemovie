@@ -14,5 +14,11 @@ export default {
   },
   setdetail ({commit}, playload) {
     commit(types.SETDETAIL, playload)
+  },
+  setcommentsplus ({commit}, playload) {
+    commit(types.SETCOMMENTSLPUS, playload)
+  },
+  setbanner ({commit}, playload) {
+    commit(types.SETBANNER, playload)
   }
 }

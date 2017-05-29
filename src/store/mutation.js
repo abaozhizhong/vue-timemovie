@@ -26,7 +26,18 @@ export default {
     api.getdetail(playload.locationid, playload.moviesid)
       .then(res => {
         state.detail = res.data
-        console.log(res.data)
+      })
+  },
+  [types.SETCOMMENTSLPUS] (state, playload) {
+    api.getcommentsplus(playload.moviesid, playload.page)
+      .then(res => {
+        state.commentsplus = res.data
+      })
+  },
+  [types.SETBANNER] (state, playload) {
+    api.getbanner(playload.locationid, playload.moviesid)
+      .then(res => {
+        state.banner = res.data
       })
   }
 }

@@ -157,7 +157,7 @@ body{
     padding:rem(15);
     overflow: hidden;
     .detail-actor-head{
-      @extend .header
+      @extend .header;
     }
     .detail-actor-content{
       font-size:rem(30);
@@ -229,6 +229,72 @@ body{
       margin:rem(50) 0;
       img{
         @include same(160);
+      }
+    }
+  }
+  .detail-commentsplus{
+    background-color: #fff;
+    margin-top:rem(20);
+    padding:rem(15);
+    overflow:hidden;
+    header{
+      @extend .header;
+      margin-bottom:0;
+    }
+    .detail-commentsplus-content{
+      display: inline-block;
+      padding:rem(20);
+      .commentsplus-title{
+        margin-top:rem(20);
+        margin-bottom:rem(20);
+        font-size:rem(35);
+        font-weight:700;
+      }
+      .commentsplus-content{
+        font-size:rem(35);
+        color:#666;
+        letter-spacing:1px;
+        line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+    .commentsplus-info{
+      display:flex;
+      dt{
+        @include same(100);
+        border-radius:50%;
+        flex-shrink:0;
+        img{
+          border-radius:50%;
+          height:100%;
+          width:100%;
+        }
+      }
+      dd{
+        flex:1;
+        padding-left:rem(40);
+        color:#666;
+        font-size:rem(30);
+        display:flex;
+        flex-wrap:wrap;
+        align-content:space-around;
+        p{
+          width:100%;
+        }
+        span{
+          @include lheight(40);
+        }
+        .commentsplus-point{
+          background-color: #659d0e;
+          color:#fff;
+          @include lheight(40);
+          padding:0 rem(15);
+          margin-left:rem(15);
+        }
       }
     }
   }

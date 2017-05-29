@@ -11,7 +11,9 @@ const state = {
   onlist: [],  // 正在热映的数组
   soonlist: [], // 即将上映的数组
   attention: [],
-  detail: null
+  detail: null,
+  commentsplus: [], // 热评
+  banner: [] // banner广告图
 }
 
 export default new Vuex.Store({

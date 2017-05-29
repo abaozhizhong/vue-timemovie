@@ -7,6 +7,9 @@ import './common/rem'
 import Fastclick from 'fastclick'
 import store from './store/state'
 import Animate from 'animate.css'
+import * as filters from './common/filters.js'
+
+Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 if ('addEventListener' in document) {
     document.addEventListener('DOMContentLoaded', function () {
         Fastclick.attach(document.body)

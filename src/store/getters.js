@@ -4,5 +4,7 @@ export default {
   onlist: state => state.onlist,
   soonlist: state => state.soonlist,
   attention: state => state.attention,
-  detail: state => state.detail
+  detail: state => state.detail,
+  commentsplus: state => state.commentsplus,
+  banner: state => state.banner
 }
