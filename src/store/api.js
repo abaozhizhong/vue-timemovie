@@ -68,9 +68,12 @@ export default {
     return fetch('/api/Movie/HotLongComments.api?pageIndex=' + page + '&movieId=' + movieid)
   },
   getcommentsmini (movieid, page) {
-    return fetch('/api/Showtime/HotMovieComments.api?pageIndex=' + pages + '&movieId=' + movieid)
+    return fetch('/mtime/Service/callback.mi/Showtime/MovieComments.api?movieId=' + movieid + '&pageIndex=' + page)
   },
   getbanner (locationid, moviesid) {
-    return fetch('/api1/Service/callback.mi/Advertisement/MovieDetailAdvertisement.api?locationId=' + locationid + '&movieId=' + moviesid)
+    return fetch('/mtime/Service/callback.mi/Advertisement/MovieDetailAdvertisement.api?locationId=' + locationid + '&movieId=' + moviesid)
+  },
+  getworker (moviesid) {
+    return fetch('/mtime/Service/callback.mi/Movie/MovieCreditsWithTypes.api?movieId=' + moviesid)
   }
 }

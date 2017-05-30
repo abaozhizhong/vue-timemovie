@@ -39,5 +39,11 @@ export default {
       .then(res => {
         state.banner = res.data
       })
+  },
+  [types.SETCOMMENTSMINI] (state, playload) {
+    api.getcommentsmini(playload.moviesid, playload.page)
+      .then(res => {
+        state.commentsmini = res.data
+      })
   }
 }

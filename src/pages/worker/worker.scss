@@ -1,0 +1,104 @@
+/*
+* @Author: wjj
+* @Date:   2017-05-30 14:45:13
+* @Last Modified by:   wjj
+* @Last Modified time: 2017-05-30 16:09:43
+*/
+@import '../../common/common';
+.wrap-worker{
+    height:100vh;
+padding-top:rem(80);
+    nav{
+        display: flex;
+        align-items: center;
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        @include lheight(80);
+        background: #0f3a4b;
+        color:#fff;
+        font-size:rem(40);
+        z-index: 1;
+        // animation:color 1s ease;
+        transition:all .3s ease-in;
+        img{
+          margin-left:rem(20);
+          @include same(40);
+          flex-shrink: 0;
+        }
+        span{
+          flex:1;
+          text-align: center;
+          padding-right:rem(40);
+        }
+    }
+    .worder-content{
+        .worker-item{
+            h2{
+                background-color: #f6f6f6;
+                font-size:rem(35);
+                color:#999;
+                padding:rem(20) rem(20);
+                border-bottom:1px solid #dfdfdf;
+                border-top:1px solid #dfdfdf;
+            }
+            ul{
+                padding-left:rem(20);
+                li{
+                    display:flex;
+                    overflow:hidden;
+                    font-size:rem(35);
+                    padding:rem(20) 0;
+                    padding-right:rem(30);
+                    border-bottom:1px solid #dfdfdf;
+                    div{
+                        /* float: left; */
+                    }
+                   .worker-img{
+                    flex-shrink:0;
+                        @include same(200);
+                        img{
+                            height:100%;
+                            width:100%;
+                        }
+                   }
+                   .worker-name{
+                        /* float: left; */
+                        display:flex;
+                        flex:1;
+                        flex-direction:column;
+                        padding-left:rem(20);
+                        p{
+                            margin-top:rem(20);
+                            /* width:rem(200); */
+                            /* flex-wrap:wrap; */
+                        }
+                        .worker-name-real{
+                            font-weight:800;
+                        }
+                        .worker-name-realen{
+                            color:#999;
+                        }
+                        .worker-name-role{
+                            font-size:rem(30);
+                        }
+                   }
+                   .worder-actor{
+                    flex-shrink:0;
+                    border-radius:50%;
+                    @include same(170);
+                    img{
+                        border-radius:50%;
+                        height:100%;
+                        width:100%;
+                    }
+                   }
+                }
+                li:nth-last-child(1){
+                    border:none;
+                }
+            }
+        }
+    }
+}

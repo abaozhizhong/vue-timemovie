@@ -6,5 +6,6 @@ export default {
   attention: state => state.attention,
   detail: state => state.detail,
   commentsplus: state => state.commentsplus,
-  banner: state => state.banner
+  banner: state => state.banner,
+  commentsmini: state => state.commentsmini
 }

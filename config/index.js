@@ -42,11 +42,11 @@ module.exports = {
           '^/ip': ''
         }
       },
-      '/api1': {
+      '/mtime': {
         target: 'https://m.mtime.cn',
         changeOrigin: true,
         pathRewrite: {
-          '^/api1': ''
+          '^/mtime': ''
         }
       }
     },

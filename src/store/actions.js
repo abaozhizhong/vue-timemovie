@@ -20,5 +20,8 @@ export default {
   },
   setbanner ({commit}, playload) {
     commit(types.SETBANNER, playload)
+  },
+  setcommentsmini ({commit}, playload) {
+    commit(types.SETCOMMENTSMINI, playload)
   }
 }

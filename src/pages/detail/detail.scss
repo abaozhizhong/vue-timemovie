@@ -3,6 +3,9 @@ body{
   height:100vh;
 }
 .wrap-detail{
+
+    height:100vh;
+    overflow:auto;
   // padding-top:rem(80);
   background-color:#ddd;
   nav{
@@ -294,6 +297,100 @@ body{
           @include lheight(40);
           padding:0 rem(15);
           margin-left:rem(15);
+        }
+      }
+    }
+  }
+  .banner{
+    width:100vw;
+    margin:rem(40) 0 0 0;
+    height:30vw;
+  }
+  .detail-commentsmini{
+    background-color: #fff;
+    padding:rem(15);
+    header{
+      @extend .header;
+    }
+    .commentsmini-content{
+      .commentsmini-content-item{
+        display:flex;
+        border-bottom:1px solid #ddd;
+        padding:rem(15) 0;
+        dt{
+          @include same(150);
+          border-radius:50%;
+          overflow:hidden;
+          flex-shrink:0;
+          img{
+            height:100%;
+            width:100%;
+          }
+        }
+        dd{
+          padding:0 rem(15);
+          /* @include ellipsis; */
+          overflow:hidden;
+          flex:1;
+          .commentsmini-title{
+            overflow:hidden;
+            width:100%;
+            font-size:rem(28);
+            justify-content:space-between;
+            /* display:flex; */
+            color:#666;
+            .commentsmini-title-name{
+              /* flex:1; */
+              @include ellipsis;
+              /* overflow:hidden; */
+              display:inline-block;
+              width:rem(150);
+            }
+            .time{
+              float: right;
+            }
+            .point{
+              background-color: #659d0e;
+              color:#fff;
+              padding:rem(5);
+                border-radius:2px;
+              /* width:rem(200); */
+              /* flex:1; */
+            }
+          }
+          .commentsmini-body{
+            margin:rem(20) 0;
+            font-size:rem(30);
+            @include ellipsis;
+            max-height:rem(170);
+            line-height: 1.5;
+          }
+          .commentsmini-footer{
+            a{
+              float: right;
+              display:flex;
+              align-items:center;
+              color:#999;
+              margin-left:rem(50);
+              text-decoration:none;
+            }
+            i{
+              @include same(50);
+              display:inline-block;
+              background-size:cover;
+              font-size:rem(30);
+            }
+            span{
+              font-size:rem(30);
+              /* width:rem(100); */
+            }
+            .concat{
+              background-image: url('../../assets/ico_reply.png');
+            }
+            .goods{
+              background-image: url('../../assets/ico_praise.png');
+            }
+          }
         }
       }
     }

@@ -13,7 +13,8 @@ const state = {
   attention: [],
   detail: null,
   commentsplus: [], // 热评
-  banner: [] // banner广告图
+  banner: [], // banner广告图
+  commentsmini: [] // 短评
 }
 
 export default new Vuex.Store({
